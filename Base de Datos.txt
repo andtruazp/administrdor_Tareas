@@ -1,0 +1,47 @@
+CREATE DATABASE db_tareas;
+
+USE db_tareas;
+
+CREATE TABLE usuario (
+    id_us INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(50),
+    usuario VARCHAR(50),
+    contrasena VARCHAR(100),
+    rol INT
+);
+
+CREATE TABLE equipo (
+	id_e INT PRIMARY KEY AUTO_INCREMENT,
+    nom VARCHAR(50),
+    des VARCHAR(100),
+    lider INT,
+    foreign key (lider) references usuario(id_us)
+);
+
+create table inegrantes (
+	id_e Int,
+    id_us Int,
+    foreign key (id_us) references usuario(id_us),
+    FOREIGN KEY (id_e) REFERENCES equipo(id_e)
+);
+
+CREATE TABLE proyecto (
+	id_p INT PRIMARY KEY AUTO_INCREMENT,
+    id_e INT,
+    nom_p VARCHAR(50),
+    des_p VARCHAR(100),
+    FOREIGN KEY (id_e) REFERENCES equipo(id_e)
+);
+
+CREATE TABLE tarea (
+	id_t INT PRIMARY KEY AUTO_INCREMENT,
+    id_p INT,
+    id_us INT,
+    nom_t VARCHAR(50),
+    des_t VARCHAR(100),
+    estado INT,
+    fecha_fin datetime,
+    notas VARCHAR(200),
+    FOREIGN KEY (id_p) REFERENCES proyecto(id_p),
+    FOREIGN KEY (id_us) REFERENCES usuario(id_us)
+);
