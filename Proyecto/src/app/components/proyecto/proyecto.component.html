@@ -1,1 +1,105 @@
-<p>proyecto works!</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Proyecto</title>
+    <!-- Agregar los enlaces a Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="proyecto.component.css">
+</head>
+<body>
+        <!-- nvbar inicio-->  
+        <div class="overlay-navigation">
+            <nav role="navigation">
+              <ul>
+                <li><a href="/home" data-content="Regresa">Inicio</a></li>
+                <li><a href="/login" data-content="Ya tienes una cuenta?">Registrate o Entra</a></li>
+                <li><a href="/proyecto" data-content="Organiza tu equipo">Registra Actividades</a></li>
+                <li><a href="#" data-content="Only the finest">Works</a></li>
+                <li><a href="#" data-content="Don't hesitate">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+          
+          <section class="home">
+            <div class="open-overlay">
+              <span class="bar-top"></span>
+              <span class="bar-middle"></span>
+              <span class="bar-bottom"></span>
+            </div>
+          </section>
+        <!-- nvbar fin-->  
+    <div class="container mt-5">
+        <!-- Sección para el formulario de proyecto -->
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="nombreProyecto">Nombre del Proyecto:</label>
+                <input type="text" class="form-control" id="nombreProyecto" name="nombreProyecto" required>
+            </div>
+
+            <div class="form-group">
+                <label for="descripcionProyecto">Descripción del Proyecto:</label>
+                <textarea class="form-control" id="descripcionProyecto" name="descripcionProyecto" rows="4" required></textarea>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="fechaInicio">Fecha y Hora de Inicio:</label>
+                    <input type="datetime-local" class="form-control" id="fechaInicio" name="fechaInicio" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="fechaFin">Fecha y Hora de Fin:</label>
+                    <input type="datetime-local" class="form-control" id="fechaFin" name="fechaFin" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="nombreActividad">Nombre de la Actividad:</label>
+                <input type="text" class="form-control" id="nombreActividad" name="nombreActividad" required>
+            </div>
+
+            <div class="form-group">
+                <label for="descripcionActividad">Descripción Detallada de la Actividad:</label>
+                <textarea class="form-control" id="descripcionActividad" name="descripcionActividad" rows="4" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="miembrosEquipo">Miembro de Equipo:</label>
+                <input type="text" class="form-control" id="miembrosEquipo" name="miembrosEquipo" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+
+        <!-- Sección para buscar proyecto y mostrar actividades en tabla -->
+        <div class="mt-5">
+            <h3>Buscar Proyecto</h3>
+            <div class="form-group">
+                <label for="nombreProyectoBusqueda">Nombre del Proyecto:</label>
+                <input type="text" class="form-control" id="nombreProyectoBusqueda" name="nombreProyectoBusqueda" required>
+            </div>
+
+            <button type="button" class="btn btn-primary">Buscar</button>
+
+            <h3>Actividades del Proyecto</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nombre de la Actividad</th>
+                        <th>Descripción</th>
+                        <th>Miembro que la Realiza</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Agregar aquí filas con información de actividades -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>
